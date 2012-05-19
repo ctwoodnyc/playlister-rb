@@ -30,9 +30,9 @@ def assert_equal(actual, expected)
 end
 
 
-require 'lib/song.rb'
-require 'lib/artist.rb'
-require 'lib/genre.rb'
+require_relative 'lib/song.rb'
+require_relative 'lib/artist.rb'
+require_relative 'lib/genre.rb'
 
 # Part 1: Object Models
 
