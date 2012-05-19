@@ -1,3 +1,5 @@
+
+
 def test(title, &b)
   begin
     if b
@@ -98,7 +100,8 @@ end
 test 'artists have genres' do
   artist = Artist.new
   song = Song.new
-  song.genre = Genre.new.tap{|g| g.name = 'rap'}
+
+  song.genre = Genre.new.tap{|g| g.name = "rap"}
   artist.add_song(song)
 
   assert artist.genres.include?(song.genre)
@@ -175,7 +178,10 @@ test 'A song can have a name'
 test 'A song can have a genre'
 test 'A song has an artist'
 
+
 # Part 2: Site Generation using ERB
+
+
 # write a ruby script that parses the data within the data directory
 # and uses the classes defined above to instantiate Song, Artist, and Genres
 # for each file. These instances should be correctly associated to each other
@@ -184,7 +190,9 @@ test 'A song has an artist'
 # This script should additionally Generate a website that has the following sections:
 # An index page that links to the two sections of the sites, artists and genres
 
+
   # index.html
+  # site/index.html
     # links to artists.html
     # links to genres.html
 
@@ -200,19 +208,29 @@ test 'A song has an artist'
 # The artist name should link to the artists individual page within site/artists.
 # This page should also say how many Artists there are in total. #way to do this using HTML
 
+# The artist index must list all the artists. This list must be sorted alphabetically.
+# In addition to the Artists name, the artists total song count should be displayed.
+# The artist name should link to the artists individual page within site/artists.
+# This page should also say how many Artists there are in total.
+
+
 # artists/<artist>.html
 # The script must generate an artist page for each individual artist that was created
 # during import. An artist's page should list the name of the artist along with their songs
 # and genres. The songs and genres must link to the individual song and genre page.
 
- # m83 - 8 songs
-  #  1. Midnight City - Folk
-   # 2. Kim & Jesse - Pop
+
+  # M83 - 8 Songs
+  #   1. Midnight City - Folk
+  #   2. Kim & Jesse - Pop
+
 
 # genres.html
 # The genre index must list all the genres. This list must be sorted by the amount of songs.
 # In addition to the Genres name, the total song and artist count should be listed along side it.
 # The genre name should link to the genres individual page within site/genres.
+
+  # Folk: 8 Songs, 3 Artists
 
   # Folk: 8 Songs, 3 Artists
 
