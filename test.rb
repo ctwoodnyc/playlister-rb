@@ -1,9 +1,12 @@
-
-
 def test(title, &b)
   begin
     if b
-      b.call
+      result = b.call
+      if result
+        puts "pass: #{title}"
+      else
+        puts "fail: #{title}"
+      end
     else
       puts "pending: #{title}"
     end
@@ -14,18 +17,14 @@ def test(title, &b)
 end
 
 def assert(statement)
-  if statement
-    puts "pass"
-  else
-    puts "fail"
-  end
+  !!statement
 end
 
 def assert_equal(actual, expected)
   if expected == actual
-    puts 'pass'
+    true
   else
-    puts "fail: expected #{expected}, got #{actual}"
+    false
   end
 end
 
