@@ -10,7 +10,7 @@ class Song
   	@name = str
   	@genre = []
   	@@songs.push(self)
-  	@@genres.push(self)
+  	# @@genres.push(self)
   end
 
 

@@ -47,7 +47,7 @@ class Artist
 
 # create genres method to add genres to artists
   def genres
-  	@genre.collect
+    @songs.collect {|s| s.genre}
   end
 
 end

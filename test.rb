@@ -103,6 +103,11 @@ test 'artists have genres' do
   song.genre = Genre.new.tap{|g| g.name = "rap"}
   artist.add_song(song)
 
+  # #
+  # puts song.genre.inspect
+  # puts artist.genres.inspect
+  # #
+
   assert artist.genres.include?(song.genre)
 end
 
@@ -124,6 +129,9 @@ test 'A genre has many songs' do
     song = Song.new
     song.genre = genre
   end
+  
+  # puts genre.inspect
+  # puts genre.songs.inspect
 
   assert_equal genre.songs.count, 2
 end
